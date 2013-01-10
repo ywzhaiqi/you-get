@@ -1,34 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>You-Get by soimort</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <title>You-Get by soimort</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
+    <header>
+      <div class="inner">
         <h1>You-Get</h1>
-        <p>A YouTube/Youku video downloader written in Python 3.</p>
+        <h2>A YouTube/Youku video downloader written in Python 3.</h2>
+        <a href="https://github.com/soimort/you-get" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
 
-        <p class="view"><a href="https://github.com/soimort/you-get">View the Project on GitHub <small>soimort/you-get</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/soimort/you-get/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/soimort/you-get/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/soimort/you-get">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>You-Get</h1>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>You-Get</h1>
 
 <p><a href="https://github.com/soimort/you-get">You-Get</a> is a video downloader runs on Python 3. It aims at easing the download of videos on <a href="http://www.youtube.com">YouTube</a>, <a href="http://www.youku.com">Youku</a>/<a href="http://www.tudou.com">Tudou</a> (biggest online video providers in China), etc., in one script.</p>
 
@@ -48,6 +48,10 @@
 <li>Dailymotion <a href="http://dailymotion.com">http://dailymotion.com</a>
 </li>
 <li>Google+ <a href="http://plus.google.com">http://plus.google.com</a>
+</li>
+<li>Tumblr <a href="http://www.tumblr.com">http://www.tumblr.com</a>
+</li>
+<li>SoundCloud <a href="http://soundcloud.com">http://soundcloud.com</a>
 </li>
 <li>Youku (优酷) <a href="http://www.youku.com">http://www.youku.com</a>
 </li>
@@ -69,11 +73,15 @@
 </li>
 <li>PPTV <a href="http://www.pptv.com">http://www.pptv.com</a>
 </li>
+<li>QQ (腾讯视频) <a href="http://v.qq.com">http://v.qq.com</a>
+</li>
 <li>Sina (新浪视频) <a href="http://video.sina.com.cn">http://video.sina.com.cn</a>
 </li>
 <li>Sohu (搜狐视频) <a href="http://tv.sohu.com">http://tv.sohu.com</a>
 </li>
 <li>56 (56网) <a href="http://www.56.com">http://www.56.com</a>
+</li>
+<li>Xiami (虾米) <a href="http://www.xiami.com">http://www.xiami.com</a>
 </li>
 </ul><h2>Dependencies</h2>
 
@@ -275,6 +283,10 @@ Downloading Mort from Madagascar LIKES.webm ...
 </li>
 <li>Google+ <a href="http://plus.google.com">http://plus.google.com</a>
 </li>
+<li>Tumblr <a href="http://www.tumblr.com">http://www.tumblr.com</a>
+</li>
+<li>SoundCloud <a href="http://soundcloud.com">http://soundcloud.com</a>
+</li>
 <li>优酷 <a href="http://www.youku.com">http://www.youku.com</a>
 </li>
 <li>土豆 <a href="http://www.tudou.com">http://www.tudou.com</a>
@@ -295,11 +307,15 @@ Downloading Mort from Madagascar LIKES.webm ...
 </li>
 <li>PPTV <a href="http://www.pptv.com">http://www.pptv.com</a>
 </li>
+<li>腾讯视频 <a href="http://v.qq.com">http://v.qq.com</a>
+</li>
 <li>新浪视频 <a href="http://video.sina.com.cn">http://video.sina.com.cn</a>
 </li>
 <li>搜狐视频 <a href="http://tv.sohu.com">http://tv.sohu.com</a>
 </li>
 <li>56网 <a href="http://www.56.com">http://www.56.com</a>
+</li>
+<li>虾米 <a href="http://www.xiami.com">http://www.xiami.com</a>
 </li>
 </ul><h2>依赖</h2>
 
@@ -469,13 +485,25 @@ $ ./you-get -V
 <h2>许可证</h2>
 
 <p>You-Get在<a href="https://raw.github.com/soimort/you-get/master/LICENSE.txt">MIT License</a>下发布。</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/soimort">soimort</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/soimort/you-get/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/soimort/you-get/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/soimort/you-get"></a> is maintained by <a href="https://github.com/soimort">soimort</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+  
   </body>
 </html>

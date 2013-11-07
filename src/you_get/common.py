@@ -509,7 +509,7 @@ def download_urls(urls, title, ext, total_size, output_dir = '.', refer = None, 
 
     if downloader == 'idm':
         isOK = idm.downloads(urls, title,ext)
-        if isOK
+        if isOK:
             return
     
     if not total_size:

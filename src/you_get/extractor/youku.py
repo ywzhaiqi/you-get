@@ -42,9 +42,11 @@ def parse_video_title(url, page):
         # if we are playing a viedo from play list, the meta title might be incorrect
         title = r1_of([r'<div class="show_title" title="([^"]+)">[^<]', r'<title>([^<>]*)</title>'], page)
     else:
-        title = r1_of([r'<div class="show_title" title="([^"]+)">[^<]', r'<meta name="title" content="([^"]*)"'], page)
+        # title = r1_of([r'<div class="show_title" title="([^"]+)">[^<]', r'<meta name="title" content="([^"]*)"'], page)
+        title = r1_of([r'<title>([^-]+)—在线播放.*</title>', r'<meta name="title" content="([^"]*)"'], page)
     assert title
     title = trim_title(title)
+
     if re.search(r'v_playlist', url) and re.search(r'-.*\S+', title):
         title = re.sub(r'^[^-]+-\s*', '', title) # remove the special name from title for playlist video
     title = re.sub(r'—专辑：.*', '', title) # remove the special name from title for playlist video

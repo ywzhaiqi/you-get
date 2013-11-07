@@ -12,11 +12,14 @@ import threading
 
 from .version import __version__
 from .util import log, legitimize, sogou_proxy_server
+from .cli_wrapper.downloader import idm
 
 dry_run = False
 force = False
 sogou_proxy = None
 sogou_env = None
+
+downloader = ''
 
 fake_headers = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -503,6 +506,11 @@ def download_urls(urls, title, ext, total_size, output_dir = '.', refer = None, 
     if dry_run:
         print('Real URLs:\n', urls, '\n')
         return
+
+    if downloader == 'idm':
+        isOK = idm.downloads(urls, title,ext)
+        if isOK
+            return
     
     if not total_size:
         try:
@@ -797,10 +805,11 @@ def script_main(script_name, download, download_playlist = None):
     -S | --sogou                             Use a Sogou proxy server for downloading.
          --sogou-proxy <HOST:PORT>           Run a standalone Sogou proxy server.
          --debug                             Show traceback on KeyboardInterrupt.
+    --idm                                    Download By IDM
     '''
     
     short_opts = 'VhfiunSo:x:'
-    opts = ['version', 'help', 'force', 'info', 'url', 'no-merge', 'no-proxy', 'debug', 'sogou', 'output-dir=', 'http-proxy=', 'sogou-proxy=', 'sogou-env=']
+    opts = ['version', 'help', 'force', 'info', 'url', 'idm', 'no-merge', 'no-proxy', 'debug', 'sogou', 'output-dir=', 'http-proxy=', 'sogou-proxy=', 'sogou-env=']
     if download_playlist:
         short_opts = 'l' + short_opts
         opts = ['playlist'] + opts
@@ -816,6 +825,7 @@ def script_main(script_name, download, download_playlist = None):
     global dry_run
     global sogou_proxy
     global sogou_env
+    global downloader
     
     info_only = False
     playlist = False
@@ -855,6 +865,8 @@ def script_main(script_name, download, download_playlist = None):
             sogou_proxy = parse_host(a)
         elif o in ('--sogou-env'):
             sogou_env = a
+        elif o in ('-I', '--idm'):
+            downloader = 'idm'
         else:
             log.e("try 'you-get --help' for more options")
             sys.exit(2)
